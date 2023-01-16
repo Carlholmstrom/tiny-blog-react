@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import "../styles/Blog.css";
 
-interface Post {
+interface IPostsData {
   id: number;
   title: string;
   body: string;
@@ -10,7 +10,7 @@ interface Post {
 }
 
 function Blog() {
-  const [posts, setPosts] = useState<Post[]>([]);
+  const [posts, setPosts] = useState<IPostsData[]>([]);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [showHistory, setShowHistory] = useState(true);
@@ -24,7 +24,7 @@ function Blog() {
       setLoading(true);
       const response = await fetch("https://dummyjson.com/posts");
       const data = await response.json();
-      setPosts(data.posts as Post[]);
+      setPosts(data.posts as IPostsData[]);
 
       setLoading(false);
     }
