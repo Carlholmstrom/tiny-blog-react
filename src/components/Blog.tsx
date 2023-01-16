@@ -20,7 +20,7 @@ function Blog() {
   const [showClassic, setShowClassic] = useState(true);
 
   useEffect(() => {
-    async function getData() {
+   const getData = async () => {
       setLoading(true);
       const response = await fetch("https://dummyjson.com/posts");
       const data = await response.json();
