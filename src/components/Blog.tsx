@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import "../styles/Blog.css";
 
 interface IPostsData {
@@ -26,7 +26,7 @@ function Blog() {
       const data = await response.json();
       setPosts(data.posts as IPostsData[]);
 
-      setLoading(false);
+      setLoading(false);  
     }
     getData();
   }, []);
